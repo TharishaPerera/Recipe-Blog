@@ -37,3 +37,18 @@ exports.exploreCategories = async (req, res) => {
         res.status(500).send({message: error.message || "Error Occured"});
     }
 }
+
+/***
+ * Get /recipe/:id
+ * Recipe Page
+ */
+ exports.exploreRecipe = async (req, res) => {
+    try {
+        let recipeId = req.params.id;
+        const recipe = await Recipe.findById(recipeId);
+
+        res.render('recipe', { title: 'Recipe | Cooking Blog', recipe });
+    } catch (error) {
+        res.status(500).send({message: error.message || "Error Occured"});
+    }
+}
