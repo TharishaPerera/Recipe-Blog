@@ -7,6 +7,7 @@ const recipeControler = require('../controllers/recipeController');
  */
 
 Router.get('/', recipeControler.homepage);
+Router.get('/categories', recipeControler.exploreCategories);
 
 
 
