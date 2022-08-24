@@ -100,3 +100,19 @@ exports.searchRecipe = async (req, res) => {
         res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
+
+/***
+ * Get /explore-random
+ * Explore Random Page
+ */
+ exports.exploreRandom = async (req, res) => {
+    try {
+        let count = await Recipe.find({}).countDocuments();
+        let random = Math.floor(Math.random() * count);
+        let recipe = await Recipe.findOne().skip(random).exec();
+        
+        res.render('explore-random', { title: 'Explore Random | Cooking Blog', recipe });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occured" });
+    }
+}
