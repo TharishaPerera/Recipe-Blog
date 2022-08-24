@@ -85,3 +85,18 @@ exports.searchRecipe = async (req, res) => {
         res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
+
+/***
+ * Get /explore-latest
+ * Explore Latest Page
+ */
+ exports.exploreLatest = async (req, res) => {
+    try {
+        const limitNumber = 20;
+        const recipe = await Recipe.find({}).sort({ _id: -1 }).limit(limitNumber);
+        
+        res.render('explore-latest', { title: 'Explore Latest | Cooking Blog', recipe });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occured" });
+    }
+}
