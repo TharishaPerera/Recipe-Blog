@@ -86,6 +86,7 @@ exports.searchRecipe = async (req, res) => {
     }
 }
 
+
 /***
  * Get /explore-latest
  * Explore Latest Page
@@ -116,3 +117,24 @@ exports.searchRecipe = async (req, res) => {
         res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
+
+/***
+ * Get /submit-recipe
+ * Submit Recipe Page
+ */
+ exports.submitRecipe = async (req, res) => {
+    try {
+        res.render('submit-recipe', { title: 'Submit Recipe | Cooking Blog' });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occured" });
+    }
+}
+
+/***
+ * Post /submit-recipe
+ * Submit Recipe
+ */
+ exports.submitRecipeOnPost = async (req, res) => {
+    res.redirect('submit-recipe');
+}
+
