@@ -17,6 +17,6 @@ Router.get('/submit-recipe', recipeControler.submitRecipe);
 
 // POST
 Router.post('/search', recipeControler.searchRecipe);
-Router.get('/submit-recipe', recipeControler.submitRecipeOnPost);
+Router.post('/submit-recipe', recipeControler.submitRecipeOnPost);
 
 module.exports = Router;

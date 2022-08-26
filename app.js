@@ -19,12 +19,12 @@ app.use(expressLayouts);
 
 app.use(cookieParser('CookingBlogSecure'));
 app.use(session({
-    secret: 'CookingBlogScretSession',
+    secret: 'CookingBlogSecretSession',
     saveUninitialized: true,
     resave: true,
 }));
 app.use(flash());
-app.use(fileUpload);
+app.use(fileUpload());
 
 // set layouts
 app.set('layout', './layouts/main');
