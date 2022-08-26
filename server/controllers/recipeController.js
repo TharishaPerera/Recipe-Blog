@@ -176,16 +176,16 @@ exports.searchRecipe = async (req, res) => {
     }
 }
 
-async function updateRecipe(){
-    try {
-        const res = await Recipe.updateOne({ name: 'updated' }, { name: 'dadwhbdawd '});
-        res.n;
-        res.nModified;
-    } catch (error) {
-        console.log(error)
-    }
-}
-updateRecipe();
+// async function updateRecipe(){
+//     try {
+//         const res = await Recipe.updateOne({ name: 'updated' }, { name: 'dadwhbdawd '});
+//         res.n;
+//         res.nModified;
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// updateRecipe();
 
 // async function deleteRecipe(){
 //     try {
